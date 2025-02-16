@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Playwrite+AU+SA:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tdl-container">
+        <div class="info-section">
+            <i class="fa-solid fa-info"></i>
+            <div class="info--content"></div>
+        </div>
+        <div class="to-do-list">
+            <div class="heading">
+                <h2>To Do List </h2>
+                <img src="images/list.png" alt="list">
+            </div>
+            <div class="addTask">
+                <input id="addInput" type="text" placeholder="Add a New Task">
+                <button id="addInputBtn" onclick="createTask()">
+                    <i class="fa-solid fa-circle-plus"></i> Add
+                </button>
+            </div>
+            <div class="filter-section">
+                <button id="all" class="active" onclick="showAll()">All</button>
+                <button id="complete" class="inactive" onclick="complete()">Complete</button>
+                <button id="incomplete" class="inactive" onclick="inComplete()">Incomplete</button>
+                <button id="delete" onclick="deleteAll()">Delete All</button>
+            </div>
+            <ul class="list-container" id="list-container">
+                <div class="empty">
+                    <img src="images/chill.png" alt="Chill">
+                    <p>No tasks yet? Must be nice being this chill!</p>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

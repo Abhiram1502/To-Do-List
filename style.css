@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --Dblue:rgb(45, 51, 107);
+    --blue:rgb(120, 134, 199);
+    --Lblue:rgb(169, 181, 223);
+    --white:rgb(255, 242, 242);
+}
+body{
+    background-color: var(--Dblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+.to-do-list{
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px  25px 20px 25px;
+}
+.heading{
+    font-family: "SUSE", serif;
+    color: var(--Dblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.6px;
+    font-size: 20px;
+}
+.heading img{
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+.addTask i{
+    font-size: 17px;
+    margin-right: 5px;
+}
+.addTask{
+    background-color: var(--Lblue);
+    border-radius: 20px;
+    flex: 1;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.addTask input{
+    height: 100%;
+    border: none;
+    padding: 10px;
+    outline: none;
+    flex: 1;
+    background-color: var(--Lblue);
+    border-radius: 20px 0px 0px 20px;
+    padding-left: 20px;
+}
+.addTask input::placeholder{
+    color: var(--white);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 5px;
+}
+.addTask button{
+    font-size: 15px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--Dblue);
+    color: white;
+}
+.addTask button:hover{
+    background-color: rgba(52, 58, 107, 0.95);
+    cursor: pointer;
+}
+.filter-section{
+    margin-top: 12px;
+}
+.filter-section button{
+    padding: 7px 10px 7px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--Dblue);
+    margin: 0px 8px 0px 8px;
+    color: var(--Dblue);
+    font-weight: 600px;
+    letter-spacing: 0.5px;
+}
+#complete:hover,#incomplete:hover{
+    background-color: var(--Dblue);
+    color: white;
+}
+#delete:hover{
+    background-color: var(--blue);
+}
+.filter-section button:nth-last-child(1){
+    border: none;
+    background-color: var(--Lblue);
+    color: white;
+    padding: 8px 10px 8px 10px;
+}
+.empty{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.empty img{
+    height: 180px;
+}
+.empty p{
+    font-size: 15px;
+    font-family: "SUSE", serif;
+    color: var(--Dblue);
+    letter-spacing: 0.5px;
+}
+.list-container{
+    list-style: none;
+    margin-top: 20px;
+}
+.list-container li{
+    cursor: pointer;
+    padding: 10px 10px 10px 40px;
+    text-align: left;
+    font-family: "SUSE", serif;
+    letter-spacing: 0.5px;
+    color: var(--Dblue);
+    position: relative;
+    display: flex;
+    font-size: 17px;
+}
+.list-container li span{
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+}
+.list-container li span:nth-child(1){
+    right: 40px;
+    height: 25px;
+    width: 25px;
+}
+.list-container li:hover{
+    background-color: rgb(248, 234, 234);
+}
+.list-container li::before{
+    content: '';
+    position: absolute;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    cursor: pointer;
+}
+.list-container li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+.list-container li.checked::before{
+    background-image: url(images/checked.png);
+}
+button.active{
+    background-color: var(--Dblue);
+    color: var(--white);
+}
+button.inactive{
+    background-color: var(--white);
+    color: var(--Dblue);
+}
+
+
+.info-section{
+    color: var(--white);
+    border: 1.5px solid var(--white);
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+}
+@media (max-width:450px){
+    .to-do-list{
+        padding: 12px 16px 12px 16px;
+    }
+    .heading{
+        font-size: 16px;
+    }
+    .addTask i{
+        font-size: 13px;
+        margin-right: 3px;
+    }
+    .addTask input{
+        padding: 9px;
+        padding-left: 15px;
+    }
+    .addTask input::placeholder{
+        font-size: 13px;
+    }
+    .addTask button{
+        font-size: 13px;
+        padding: 8px 12px 8px 12px;
+    }
+    .filter-section button{
+        padding: 7px 8px 7px 8px;
+        font-size: 12px;
+        margin: 0px 3px 0px 3px;
+    }
+    .filter-section button:nth-last-child(1){
+        padding: 8px 8px 8px 8px;
+    }
+    .empty img{
+        height: 150px;
+    }
+    .empty p{
+        font-size: 13px;
+    }
+    .list-container{
+        margin-top: 12px;
+    }
+    .list-container li{
+        cursor: pointer;
+        padding: 8px 8px 8px 40px;
+        font-size: 16px;
+    }
+    .list-container li span{
+        height: 18px;
+        width: 18px;
+    }
+    .list-container li span:nth-child(1){
+        right: 40px;
+        height: 22px;
+        width: 22px;
+    }
+    .list-container li::before{
+        height: 18px;
+        width: 18px;
+    }
+    .info-section{
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 12px;
+        height: 12px;
+        width: 12px;
+    }
+}
