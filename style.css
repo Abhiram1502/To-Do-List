@@ -207,7 +207,7 @@ button.inactive{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: noe;
+    display: none;
 }
 .info-content{
     display: flex;
