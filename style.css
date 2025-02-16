@@ -20,6 +20,9 @@ body{
     background-color: var(--white);
     border-radius: 10px;
     padding: 20px  25px 20px 25px;
+    overflow: hidden;
+    width: 40vw;
+    z-index: 1;
 }
 .heading{
     font-family: "SUSE", serif;
@@ -46,6 +49,8 @@ body{
     margin-top: 10px;
     display: flex;
     align-items: center;
+    justify-self:center;
+    width: 85%;
 }
 .addTask input{
     height: 100%;
@@ -66,7 +71,7 @@ body{
 }
 .addTask button{
     font-size: 15px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 5% 10px 5%;
     border-radius: 20px;
     border: none;
     background-color: var(--Dblue);
@@ -83,7 +88,7 @@ body{
     padding: 7px 10px 7px 10px;
     border-radius: 20px;
     border: 1px solid var(--Dblue);
-    margin: 0px 8px 0px 8px;
+    margin: 0px 10px 0px 10px;
     color: var(--Dblue);
     font-weight: 600px;
     letter-spacing: 0.5px;
@@ -121,7 +126,7 @@ body{
 }
 .list-container li{
     cursor: pointer;
-    padding: 10px 10px 10px 40px;
+    padding: 10px 80px 10px 40px;
     text-align: left;
     font-family: "SUSE", serif;
     letter-spacing: 0.5px;
@@ -129,6 +134,7 @@ body{
     position: relative;
     display: flex;
     font-size: 17px;
+    word-break: break-word;
 }
 .list-container li span{
     background-size: cover;
@@ -175,24 +181,81 @@ button.inactive{
 }
 
 
-.info-section{
+#info{
     color: var(--white);
     border: 1.5px solid var(--white);
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
     padding: 6px;
+    height: 15px;
+    width: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     font-size: 15px;
-    height: 15px;
-    width: 15px;
+}
+.info-section{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: noe;
+}
+.info-content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--Dblue);
+    width: 50vw;
+    z-index: 9;
+    font-family: "SUSE", serif;
+    padding: 20px 10px 20px 40px;
+    text-align: left;
+    border-radius: 10px;
+    position: relative;
+}
+.info-content span{
+    position: absolute;
+    font-size: 20px;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+.info-content h2{
+    letter-spacing: 0.5px;
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+.info-content p{
+    letter-spacing: 0.5px;
+}
+.info-content li{
+    margin-top: 5px;
+}
+
+@media (max-width:890px){
+    .to-do-list{
+        width: 60vw;
+    }
+    .info-content{
+        width: 70vw;
+    }
 }
 @media (max-width:450px){
     .to-do-list{
+        width: 80vw;
         padding: 12px 16px 12px 16px;
+    }
+    .addTask{
+        width: 90%;
     }
     .heading{
         font-size: 16px;
@@ -231,7 +294,7 @@ button.inactive{
     }
     .list-container li{
         cursor: pointer;
-        padding: 8px 8px 8px 40px;
+        padding: 8px 70px 8px 40px;
         font-size: 16px;
     }
     .list-container li span{
@@ -247,11 +310,40 @@ button.inactive{
         height: 18px;
         width: 18px;
     }
-    .info-section{
-        padding: 6px;
-        border-radius: 50%;
-        font-size: 12px;
-        height: 12px;
-        width: 12px;
+    #info{
+        top: 20px;
+        padding: 4px;
+        font-size: 13px;
+    }
+    .info-content{
+        width: 80vw;
+        padding: 15px 10px 15px 30px;
+    }
+    .info-content h2{
+        font-size: 16px;
+        margin: 3px 0px 3px 0px;
+    }
+    .info-content p{
+        letter-spacing: 0.5px;
+        font-size: 13px;
+    }
+    .info-content li{
+        margin-top: 3px;
+        font-size: 13px;
+    }
+}
+@media (max-width:360px) {
+    .to-do-list{
+        width: 85vw;
+        padding: 10px 10px 10px 10px;
+    }
+    .addTask{
+        width: 95%;
+    }
+    .filter-section button{
+        padding: 7px;
+        font-size: 11px;
+        margin: 0px 2px 0px 2px;
+        white-space: nowrap;
     }
 }

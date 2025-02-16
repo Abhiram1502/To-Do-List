@@ -97,12 +97,17 @@ function showAll(){
     });
 }
 function deleteAll(){
-    let allTask=document.querySelectorAll('.list-content');
-    allTask.forEach(task => {
-        task.remove();
-        emptyList();
-    });
-    saveData();
+    const confirmation=confirm("Are you sure you want to delete all tasks..!");
+    if(confirmation){
+        let allTask=document.querySelectorAll('.list-content');
+        allTask.forEach(task => {
+            task.remove();
+            emptyList();
+        });
+        saveData();
+    }else{
+        return;
+    }
 }
 
 //Storing Data in Loacal Storage
@@ -117,3 +122,14 @@ function showData(){
     emptyList();
 }
 showData();
+
+const info=document.getElementById('info');
+const infoSection=document.querySelector('.info-section');
+const closeInfo=document.getElementById('close');
+
+info.addEventListener("click",()=>{
+    infoSection.style.display='flex';
+})
+closeInfo.addEventListener("click",()=>{
+    infoSection.style.display='none';
+})
